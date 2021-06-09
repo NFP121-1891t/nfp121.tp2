@@ -1,5 +1,6 @@
 package question3;
 
+
 import question1.*;
 import javax.swing.*;
 import java.awt.*;
@@ -33,10 +34,15 @@ public class IHMFahrenheit extends JFrame implements ActionListener{
   public void actionPerformed( ActionEvent ae ){
     try{
       int fahrenheit = 0; // valeur est une String et doit être convertie en entier, voir java.lang.Integer méthode parseInt (--> try/catch)
-      float celsius = 0F; // à compléter, en appelant la méthode ad'hoc de la question2 
+      float celsius = 0F; // à compléter, en appelant la méthode ad'hoc de la question2
+       String Input;
       // un test ici pour le zéro absolu (-273.1)
+        Input= entree.getText();// get text from iputText
+        fahrenheit = Integer.parseInt(Input); // valeur est une String et doit être convertie en entier, voir java.lang.Integer méthode parseInt (--> try/catch)
+        celsius = FahrenheitCelsius.fahrenheitEnCelsius(fahrenheit); //  en appelant la méthode fahrenheitEnCelsius de la question2 
 
-      sortie.setText( Float.toString( celsius));
+        if (celsius < -273.1F) celsius = -273.1F;
+      sortie.setText( Float.toString(celsius));
     }catch(NumberFormatException nfe){
       sortie.setText("error ! ");
     }
