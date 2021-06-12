@@ -70,9 +70,16 @@ public class FahrenheitCelsiusTest extends junit.framework.TestCase
      */
 
 
+  
+      
+
+   
+
     public void test1()
     {
-        question2.FahrenheitCelsius.main({ "0","zz","100"});
+        question2.FahrenheitCelsius.main({ "20", "ZZ", "10", "A20", "45Z" });
     }
 }
+
+
 
